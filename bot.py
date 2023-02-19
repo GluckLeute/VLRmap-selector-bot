@@ -4,7 +4,7 @@ import random
 from config import TOKEN
 
 ALL_MAPS = ["ASCENT","BIND","SPLIT","HAVEN","ICEBOX","BREEZE","FRACTURE","PEARL","LOTUS"]
-map_names =  {
+MAP_DICT =  {
          "1": "ASCENT",
         "2": "SPLIT",
         "3": "HAVEN",
@@ -25,7 +25,6 @@ bot = commands.Bot(command_prefix="!", intents=intents)
 async def on_ready():
     print('success')
 
-# メッセージ受信時に実行される処理
 @bot.event
 async def on_message(message):
     await bot.process_commands(message)
@@ -49,7 +48,7 @@ async def m_list(ctx):
 @bot.command()
 async def m_num(ctx):
     msg = "マップナンバー一覧:\n"
-    for number, name in map_names.items():
+    for number, name in MAP_DICT.items():
         msg += f"{number}: {name}\n"
     await ctx.send(msg)
 
@@ -58,10 +57,10 @@ async def m_ban(ctx, *maps):
     try:
         banlist = []
         for item in maps:
-            if item in map_names:
-                banlist.append(map_names[item])
+            if item in MAP_DICT:
+                banlist.append(MAP_DICT[item])
             else:
-                if item.upper() in map_names.values():
+                if item.upper() in MAP_DICT.values():
                     banlist.append(item.upper())
                 else:
                     await ctx.send(f"不正な入力です: {item}")
