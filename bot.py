@@ -85,4 +85,5 @@ async def map(ctx, n:int):
     elif len(maplist) < n:
         await ctx.send("MAP数より多い値が指定されました.")
 
-bot.run(TOKEN)
+if __name__ == "__main__" :
+    bot.run(TOKEN)
