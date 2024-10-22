@@ -3,7 +3,7 @@ from discord.ext import commands
 import random
 from config import TOKEN
 
-ALL_MAPS = ["ASCENT","BIND","SPLIT","HAVEN","ICEBOX","BREEZE","FRACTURE","PEARL","LOTUS","SUNSET"]
+ALL_MAPS = ["ASCENT","BIND","SPLIT","HAVEN","ICEBOX","BREEZE","FRACTURE","PEARL","LOTUS","SUNSET","ABYSS"]
 MAP_DICT =  {
         "1" : "ASCENT",
         "2" : "SPLIT",
@@ -14,7 +14,8 @@ MAP_DICT =  {
         "7" : "FRACTURE",
         "8" : "PEARL",
         "9" : "LOTUS",
-        "10": "SUNSET"
+        "10": "SUNSET",
+        "11": "ABYSS",
         }
 maplist = ALL_MAPS[:]
 
